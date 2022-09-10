@@ -1,11 +1,10 @@
-name: aws-glue-connectios-plugin
-description: AWS Glue connections Plugin
-display-name: aws-glue-connectios-plugin
+name: aws-glue-connection-plugin
+description: AWS Glue connection Plugin
+display-name: aws-glue-connection-plugin
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
 compatibility:
-  - java
-  - spring
+  - Terraform
 about: docs/about.md
 usage: docs/usage.md
 use-case: docs/use-case.md
@@ -15,17 +14,17 @@ technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/
 types:
   - env
 inputs:
-  - label: Input Example
+  - label: Qual será o nome da connection?
     type: text
-    name: example
-    default: any text
-  - label: Example of number
-    type: int
-    name: any_number
-    default: "10"
-  - label: Example of list
-    type: multiselect
-    name: any_list
+    name: connection_name
+    
+  - label: Qual será o tipo da connection?
+    type: text
     items:
-      - item1
-      - item2
+      - S3
+      - JDBC
+    name: connection_type
+
+  - label: Qual será a descrição da connection?
+    type: text
+    name: connection_description
